@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import CardList from './components/card-list/CardList.component';
+
+import "./App.css";
 
 function App() {
+  const [coronaData, setCoronaData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const {data} = await axios.get(
+        "https://api-covid19.rnbo.gov.ua/data?to=2021-02-05"
+      );
+      setCoronaData(data);
+      console.log(data)
+    };
+    fetchData();
+  }, []);
+
+  console.log(coronaData);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {coronaData.length <= 1  ? 
+      <h2>Loading...</h2>
+      :
+      <div>
+                    <CardList coronaData={coronaData}/>
+        {coronaData.ukraine.map(city => {
+          return <div>
+            <h2>{city.label.uk}</h2>
+            <h5>All confirmed cases: {city.confirmed}</h5>
+          </div>
+        })}
+      </div>
+
+    }
     </div>
   );
 }

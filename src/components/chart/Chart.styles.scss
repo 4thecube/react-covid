@@ -1,0 +1,17 @@
+.mixed-chart{
+    width: 50vw;
+    color: black;
+
+    border-bottom: 3px solid #06090f;
+    border-top: 3px solid #06090f;
+
+    svg text {
+        fill: white;
+    }
+
+
+
+    .apexcharts-legend-text{
+        color: blue;
+    }
+}

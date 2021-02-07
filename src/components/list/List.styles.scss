@@ -1,0 +1,81 @@
+.header {
+  position: fixed;
+  width: 45vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 1.5rem;
+  color: white;
+  background-color: #0d1117;
+  z-index: 3;
+
+  .header-title {
+    width: 35%;
+  }
+
+  .header-deaths,
+  .header-existing,
+  .header-confirmed,
+  .header-recovered {
+    color: white;
+    width: 13%;
+  }
+
+  .header-existing {
+    padding-left: 50px;
+  }
+
+  .header-death {
+    padding: 0;
+  }
+}
+
+.open-card {
+  top: 200px;
+  height: 55vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  position: absolute;
+  z-index: 99;
+  overflow-x: hidden;
+}
+
+.regions-container {
+  width: 45vw;
+  display: flex;
+  position: relative;
+  top: 70px;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 5vh;
+  color: white;
+  overflow: hidden;
+  padding: 1.5rem;
+  border-bottom: 1px solid grey;
+  background-color: #0d1117;
+}
+
+.region-title {
+  width: 40%;
+}
+
+.region-confirmed {
+  color: #1096de;
+  width: 15%;
+}
+.region-recovered {
+  width: 10%;
+  color: #40c463;
+  padding-left: 25px;
+}
+.region-existing {
+  color: #ff7700;
+  padding-left: 10px;
+  width: 12%;
+}
+.region-deaths {
+  width: 15%;
+  color: #de3618;
+  padding-left: 35px;
+}

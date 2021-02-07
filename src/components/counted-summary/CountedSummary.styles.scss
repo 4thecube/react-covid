@@ -1,0 +1,41 @@
+.summary-box{
+    width: 200px;
+    height: 100px;
+    color: white;
+    text-align: start;
+    padding-left: 2rem;
+
+    .text-icon{
+        margin-left: 10px;
+    }
+
+    .counted{
+        padding-left: 2rem;
+        text-align: start;
+    }
+}
+
+.summary-container{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-content: center;
+    height: 500px;
+    background-color: #06090f;
+}
+
+.recovered{
+   color: #40c463;
+}
+
+.deaths{
+    color: #DE3618;
+}
+
+.confirmed{
+    color: #1096DE;
+}
+
+.existing{
+    color: #ff7700;
+}

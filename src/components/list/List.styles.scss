@@ -8,6 +8,7 @@
   color: white;
   background-color: #0d1117;
   z-index: 3;
+  font-weight: bold ;
 
   .header-title {
     width: 35%;
@@ -18,15 +19,21 @@
   .header-confirmed,
   .header-recovered {
     color: white;
-    width: 13%;
+    width: 15%;
+    text-align: center;
   }
-
+  .header-confirmed{
+    padding-left: 10px;
+  }
+  .header-recovered{
+    padding-left: 30px;
+  }
   .header-existing {
-    padding-left: 50px;
+    padding-left: 15px;
   }
 
-  .header-death {
-    padding: 0;
+  .header-deaths {
+    padding-left: 15px;
   }
 }
 
@@ -66,16 +73,18 @@
 }
 .region-recovered {
   width: 10%;
+  text-align: center;
   color: #40c463;
-  padding-left: 25px;
 }
 .region-existing {
   color: #ff7700;
-  padding-left: 10px;
-  width: 12%;
+  margin-left: 25px;
+  text-align: center;
+  width: 15%;
 }
 .region-deaths {
   width: 15%;
+  text-align: center;
   color: #de3618;
-  padding-left: 35px;
+  
 }

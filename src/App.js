@@ -6,15 +6,11 @@ import { faVirus } from "@fortawesome/free-solid-svg-icons";
 import List from "./components/list/List.component";
 import ChartComponent from "./components/chart/Chart.component";
 import CountedSummary from "./components/counted-summary/CountedSummary.component";
+import getCurrentDate from './currentDate';
 
 import "./App.scss";
-// TODO: create routes for pages: all list pages (AllRegionsPage),
-//HomePage (containt diagram and sum of all cases). Create function to summ all cases
-//
+import Loader from "./components/Loader/Loader.component";
 
-/*
-
-          */
 function App() {
   const [coronaData, setCoronaData] = useState([]);
   const [hidden, setHidden] = useState(false);
@@ -25,10 +21,12 @@ function App() {
     existingAll: null,
   });
 
+  const currentDate = getCurrentDate();
+
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await axios.get(
-        "https://api-covid19.rnbo.gov.ua/data?to=2021-02-07"
+        `https://api-covid19.rnbo.gov.ua/data?to=${currentDate}`
       );
 
       setCoronaData({ data });
@@ -75,19 +73,21 @@ function App() {
       <div className="main-container">
         {hidden ? (
           coronaData.length ? (
-            <h1>Loading data...</h1>
+            <Loader/>
           ) : (
             <List coronaData={coronaData} />
           )
         ) : null}
         <div className={`${hidden ? 'blured' : ''} chart-and-summary-container`}>
-          <ChartComponent />
           {all.confirmedAll === null ? (
             <>
-              <h2>Роблю деякі розрахунки...</h2>
+              <Loader/>
             </>
           ) : (
+            <>
+            <ChartComponent />
             <CountedSummary all={all} />
+          </>
           )}
         </div>
       </div>

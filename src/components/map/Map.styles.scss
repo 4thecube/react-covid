@@ -1,0 +1,30 @@
+.marker {
+  color: white;
+  transform: translate(-50%, -100%);
+
+  &:hover {
+    color: #40c463;
+  }
+}
+
+.city{
+    color: white;
+    padding: 1rem;
+}
+.popup {
+  z-index: 13;
+}
+
+.mapboxgl-popup-content {
+  background: none;
+  background-color: #06090f;
+
+  .mapboxgl-popup-close-button {
+    color: red;
+    font-size: 22px;
+  }
+}
+.popup-info-container {
+  display: flex;
+  flex-direction: column;
+}

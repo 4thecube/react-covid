@@ -37,6 +37,14 @@
     align-items: center;
 
     cursor: pointer;
+
+    &:hover{
+      background-color: #40c463;
+    }
+
+    &.active{
+      background-color: red;
+    }
   }
 
   .main-container {
@@ -53,4 +61,17 @@
     flex-direction: row;
     justify-content: center;
   }
+}
+
+.buttons-container{
+width: 45vw;
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+}
+.app-map{
+  position: fixed;
+  top: 200px;
+
+  z-index: 33;
 }

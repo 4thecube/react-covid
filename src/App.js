@@ -6,14 +6,16 @@ import { faVirus } from "@fortawesome/free-solid-svg-icons";
 import List from "./components/list/List.component";
 import ChartComponent from "./components/chart/Chart.component";
 import CountedSummary from "./components/counted-summary/CountedSummary.component";
-import getCurrentDate from './currentDate';
+import getCurrentDate from "./currentDate";
 
 import "./App.scss";
 import Loader from "./components/Loader/Loader.component";
+import Map from "./components/map/Map.component";
 
 function App() {
   const [coronaData, setCoronaData] = useState([]);
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(true);
+  const [hiddenMap, setHiddenMap] = useState(true);
   const [all, setAll] = useState({
     confirmedAll: null,
     deathsAll: null,
@@ -67,27 +69,39 @@ function App() {
         </h1>
         <h1 className="title-text">COVID-19 TRACKER. UKRAINE</h1>
       </div>
-      <div onClick={() => setHidden(!hidden)} className="button-container">
-        Переглянути по областях
+      <div className="buttons-container">
+        <div
+          onClick={() => setHidden(!hidden)}
+          className={`${hidden ? "" : "active"} button-container`}
+        >
+          Переглянути по областях
+        </div>
+        <div
+          onClick={() => setHiddenMap(!hiddenMap)}
+          className={`${hiddenMap ? "" : "active"} button-container`}
+        >
+          Переглянути на карті
+        </div>
       </div>
       <div className="main-container">
-        {hidden ? (
-          coronaData.length ? (
-            <Loader/>
-          ) : (
-            <List coronaData={coronaData} />
-          )
-        ) : null}
-        <div className={`${hidden ? 'blured' : ''} chart-and-summary-container`}>
+        {hidden ? null : <List coronaData={coronaData} />}
+        {hiddenMap ? null : (
+          <div className="app-map">
+            <Map coronaData={coronaData} />
+          </div>
+        )}
+        <div
+          className={`${hidden ? "" : "blured"} chart-and-summary-container`}
+        >
           {all.confirmedAll === null ? (
             <>
-              <Loader/>
+              <Loader />
             </>
           ) : (
             <>
-            <ChartComponent />
-            <CountedSummary all={all} />
-          </>
+              <ChartComponent />
+              <CountedSummary all={all} />
+            </>
           )}
         </div>
       </div>

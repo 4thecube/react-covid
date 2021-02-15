@@ -69,7 +69,7 @@ const Map = ({ coronaData }) => {
                     </span>
                     <span className="recovered">Одужало: {city.recovered}</span>
                     <span className="existing">Хворіє: {city.existing}</span>
-                    <span className="deaths">Померло: {city.existing}</span>
+                    <span className="deaths">Померло: {city.deaths}</span>
                   </div>
                 </Popup>
               ) : null}

@@ -3,7 +3,6 @@ import { useState } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
-import "mapbox-gl/dist/mapbox-gl.css";
 
 import "./Map.styles.scss";
 import Loader from "../../components/Loader/Loader.component";

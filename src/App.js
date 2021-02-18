@@ -8,6 +8,7 @@ import Map from "./pages/map/Map.page";
 import Home from "./pages/home/Home.page";
 
 import "./App.scss";
+import "mapbox-gl/dist/mapbox-gl.css";
 
 function App() {
   const [coronaData, setCoronaData] = useState([]);

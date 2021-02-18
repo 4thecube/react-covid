@@ -11,7 +11,6 @@ import Loader from "../../components/Loader/Loader.component";
 
 const Map = ({ coronaData }) => {
   const mapToken  = 'pk.eyJ1Ijoib3J6ZW4iLCJhIjoiY2tsNmtlNThxMXdmMjJvbzRuZmM5Z2xlMSJ9.evazqKiIpbm3w7p31rwMXw';
-  console.log(mapToken);
   const [viewport, setViewport] = useState({
     width: '100vw',
     height: '100vh',

@@ -1,5 +1,5 @@
 import React from "react";
-
+import mapboxgl  from 'mapbox-gl'; 
 import { useState } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,7 +9,12 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import "./Map.styles.scss";
 import Loader from "../Loader/Loader.component";
 
+mapboxgl.accessToken =
+  'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA';
+
 const Map = ({ coronaData }) => {
+  const mapToken  = 'pk.eyJ1Ijoib3J6ZW4iLCJhIjoiY2tsNmtlNThxMXdmMjJvbzRuZmM5Z2xlMSJ9.evazqKiIpbm3w7p31rwMXw';
+  console.log(mapToken);
   const [viewport, setViewport] = useState({
     width: 1000,
     height: 600,
@@ -25,7 +30,7 @@ const Map = ({ coronaData }) => {
     <>
       <ReactMapGL
         mapStyle="mapbox://styles/orzen/ckl6kx0wt5en117tflro7bng6"
-        mapboxApiAccessToken="pk.eyJ1Ijoib3J6ZW4iLCJhIjoiY2tsNmtlNThxMXdmMjJvbzRuZmM5Z2xlMSJ9.evazqKiIpbm3w7p31rwMXw"
+        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN || mapToken}
         {...viewport}
         onViewportChange={(nextViewport) => setViewport(nextViewport)}
       >

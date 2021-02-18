@@ -56,7 +56,6 @@ function App() {
     fetchData();
   }, []);
 
-  console.log(coronaData);
   return (
     <>
       <Route exact path="/">

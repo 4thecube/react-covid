@@ -6,7 +6,6 @@ function getCurrentDate() {
 
   // 2021-01-09 format for Coronavirus tracker
   today = yyyy + "-" + mm + "-" + dd;
-  console.log(today);
   return today;
 }
 

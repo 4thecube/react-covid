@@ -24,7 +24,6 @@ const Map = ({ coronaData }) => {
   return (
     <>
       <ReactMapGL
-       mapStyle={'mapbox://styles/orzen/ckl6kx0wt5en117tflro7bng6'}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN || mapToken}
         {...viewport}
         onViewportChange={(nextViewport) => setViewport(nextViewport)}

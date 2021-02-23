@@ -4,7 +4,6 @@ import "./List.styles.scss";
 
 const List = ({ coronaData }) => {
   const { data } = coronaData;
-  console.log(data);
   return (
     <>
       {data === undefined ? null : (
@@ -18,7 +17,7 @@ const List = ({ coronaData }) => {
           </div>
           <div className="">
             {data.ukraine.map((region) => (
-              <div className="regions-container">
+              <div key={region.id} className="regions-container">
                 <div className="region-title">{region.label.uk}</div>
                 <div className="region-confirmed">{region.confirmed}</div>
                 <div className="region-recovered">{region.recovered}</div>

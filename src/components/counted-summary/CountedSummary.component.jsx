@@ -24,7 +24,6 @@ const CountedSummary = (props) => {
       </div>
       <div className="summary-box recovered">
         <h3>
-          {" "}
           <FontAwesomeIcon icon={faHandHoldingMedical} />
           <span className="text-icon">Одужало:</span>
         </h3>

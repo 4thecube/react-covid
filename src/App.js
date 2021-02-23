@@ -8,7 +8,10 @@ import Map from "./pages/map/Map.page";
 import Home from "./pages/home/Home.page";
 
 import "./App.scss";
-import "mapbox-gl/dist/mapbox-gl.css";
+import 'mapbox-gl/dist/mapbox-gl.css';
+import mapboxgl from 'mapbox-gl';
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 function App() {
   const [coronaData, setCoronaData] = useState([]);

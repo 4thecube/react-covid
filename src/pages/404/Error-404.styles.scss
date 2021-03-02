@@ -1,0 +1,39 @@
+.error-404 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+
+  .error-404__gohome {
+    width: 20vw;
+    height: 5vh;
+    font-size: 2em;
+    top: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    left: 40px;
+    position: absolute;
+
+    .gohome__text {
+      margin-left: 20px;
+    }
+  }
+  .error-404__code {
+    font-size: 128px;
+    color: red;
+    font-weight: bolder;
+  }
+
+  .error-404__title {
+    font-size: 3em;
+    font-weight: bolder;
+    border-bottom: 5px solid red;
+    .title__badword {
+      background-color: red;
+    }
+  }
+}

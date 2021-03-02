@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import getCurrentDate from "./currentDate";
 
@@ -8,10 +8,11 @@ import Map from "./pages/map/Map.page";
 import Home from "./pages/home/Home.page";
 
 import "./App.scss";
-import 'mapbox-gl/dist/mapbox-gl.css';
-import mapboxgl from 'mapbox-gl';
+import "mapbox-gl/dist/mapbox-gl.css";
+import mapboxgl from "mapbox-gl";
+import Error from "./pages/404/Error-404";
 // eslint-disable-next-line import/no-webpack-loader-syntax
-mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
+mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 
 function App() {
   const [coronaData, setCoronaData] = useState([]);
@@ -60,14 +61,19 @@ function App() {
   }, []);
 
   return (
-    <>
-      <Route exact path="/">
-        <Home all={all} coronaData={coronaData}/>
-      </Route>
-      <Route exact path="/map">
-        <Map coronaData={coronaData} />
-      </Route>
-    </>
+    <div className="app">
+      <Switch>
+        <Route exact path="/">
+          <Home all={all} coronaData={coronaData} />
+        </Route>
+        <Route exact path="/map">
+          <Map coronaData={coronaData} />
+        </Route>
+        <Route path="*">
+          <Error />
+        </Route>
+      </Switch>
+    </div>
   );
 }
 

@@ -1,10 +1,18 @@
 import React from "react";
-import Loader from "../Loader/Loader.component";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLongArrowAltLeft,
+  faLevelUpAlt,
+} from "@fortawesome/free-solid-svg-icons";
 
 import "./List.styles.scss";
+import { Link } from "react-router-dom";
+import Loader from "../../components/Loader/Loader.component";
 
 const List = ({ coronaData }) => {
   const { data } = coronaData;
+  console.log(data.ukraine);
   return (
     <div className="list-of-cities">
       {data.ukraine ? (

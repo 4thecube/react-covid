@@ -13,40 +13,22 @@ const CountedSummary = (props) => {
   const { all } = props;
   return (
     <div className="summary-container">
-      <div className="summary-box confirmed">
-        <h3>
-          <FontAwesomeIcon icon={faUsers} />
-          <span className="text-icon"> Підтверджено:</span>
-        </h3>
-        <div className="counted">
-          <h3> {all.confirmedAll}</h3>
+      <div className="summary-box-container">
+        <div className="summary-box summary-confirmed">
+          <span className="summary-counted">{all.confirmedAll}</span>
+          <span className="summary-description"> Підтверджено</span>
         </div>
-      </div>
-      <div className="summary-box recovered">
-        <h3>
-          <FontAwesomeIcon icon={faHandHoldingMedical} />
-          <span className="text-icon">Одужало:</span>
-        </h3>
-        <div className="counted">
-          <h3> {all.recoveredAll}</h3>
+        <div className="summary-box summary-recovered">
+          <span className="summary-counted">{all.recoveredAll}</span>
+          <span className="summary-description">Одужало</span>
         </div>
-      </div>
-      <div className="summary-box existing">
-        <h3>
-          <FontAwesomeIcon icon={faHeadSideVirus} />
-          <span className="text-icon">Хворіє:</span>
-        </h3>
-        <div className="counted">
-          <h3> {all.existingAll}</h3>
+        <div className="summary-box summary-existing">
+          <span className="summary-counted">{all.existingAll}</span>
+          <span className="summary-description">Хворіє</span>
         </div>
-      </div>
-      <div className="summary-box deaths">
-        <h3>
-          <FontAwesomeIcon icon={faCross} />
-          <span className="text-icon">Померло:</span>
-        </h3>
-        <div className="counted">
-          <h3> {all.deathsAll}</h3>
+        <div className="summary-box summary-deaths">
+          <span className="summary-counted">{all.deathsAll}</span>
+          <span className="summary-description">Померло</span>
         </div>
       </div>
     </div>

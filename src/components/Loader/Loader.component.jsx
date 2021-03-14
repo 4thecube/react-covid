@@ -11,7 +11,7 @@ const Loader = () => {
       spin
       style={{
           width: 'inerhit',
-        color: "white",
+        color: "black",
         display: "flex",
         justifyContent: "center",
         alignSelf: "center",

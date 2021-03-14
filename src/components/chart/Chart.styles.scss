@@ -1,26 +1,38 @@
-.mixed-chart{
-    width: 50vw;
+.mixed-chart-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .mixed-chart__title {
+    width: 70%;
+    text-align: start;
+    font-size: 4rem;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+    padding: 1rem;
+  }
+  .mixed-chart {
+    width: 75vw;
+    height: 75vh;
     color: black;
 
-    border-bottom: 3px solid #06090f;
-    border-top: 3px solid #06090f;
-
-
     @media screen and (max-width: 420px) {
-        width: 100vw;
+      width: 100vw;
     }
 
     @media screen and (min-width: 421px) and (max-width: 900px) {
-        width: 65vw;
+      width: 65vw;
     }
 
     svg text {
-        fill: white;
+      fill: black;
     }
 
-
-
-    .apexcharts-legend-text{
-        color: blue;
+    .apexcharts-legend-text {
+      color: blue;
     }
+  }
 }

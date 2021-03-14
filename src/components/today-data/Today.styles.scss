@@ -1,0 +1,53 @@
+.today-container {
+  width: 100vw;
+  height: 100vh;
+  font-size: 2rem;
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .today-title {
+    width: 70%;
+    text-align: start;
+    font-size: 4rem;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+  }
+
+  .today-block-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+
+    .today-block {
+      width: 30vw;
+      height: 16vh;
+      margin: 1rem;
+      padding: 3rem;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      background-color: #eaf5f1;
+
+      .today-block-counted {
+        padding: 1rem;
+        font-size: 4rem;
+        font-weight: bolder;
+      }
+
+      .today-block-title {
+        padding: 0.3rem;
+        font-weight: lighter;
+      }
+    }
+
+    .today-deaths {
+      background-color: #ffe3e2;
+    }
+  }
+}

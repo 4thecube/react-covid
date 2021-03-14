@@ -11,11 +11,14 @@ import "./App.scss";
 import "mapbox-gl/dist/mapbox-gl.css";
 import mapboxgl from "mapbox-gl";
 import Error from "./pages/404/Error-404";
+import Loader from "./components/Loader/Loader.component";
+import List from "./pages/list/List.component";
 // eslint-disable-next-line import/no-webpack-loader-syntax
 mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 
 function App() {
-  const [coronaData, setCoronaData] = useState([]);
+  const [coronaDataForCities, setCoronaDataForCities] = useState([]);
+  const [coronaDataPerDay, setCoronaDataPerDay] = useState({});
   const [all, setAll] = useState({
     confirmedAll: null,
     deathsAll: null,
@@ -26,12 +29,17 @@ function App() {
   const currentDate = getCurrentDate();
 
   useEffect(() => {
+    const res = async () => {
+      const { data } = await axios.get(
+        "https://api-covid19.rnbo.gov.ua/charts/main-data?mode=ukraine"
+      );
+      setCoronaDataPerDay(data);
+    };
     const fetchData = async () => {
       const { data } = await axios.get(
         `https://api-covid19.rnbo.gov.ua/data?to=${currentDate}`
       );
-
-      setCoronaData({ data });
+      setCoronaDataForCities({ data });
 
       const confirmedAll = data.ukraine.reduce(
         (acc, curr) => acc + curr.confirmed,
@@ -58,21 +66,35 @@ function App() {
       });
     };
     fetchData();
+    res();
   }, []);
 
   return (
     <div className="app">
-      <Switch>
-        <Route exact path="/">
-          <Home all={all} coronaData={coronaData} />
-        </Route>
-        <Route exact path="/map">
-          <Map coronaData={coronaData} />
-        </Route>
-        <Route path="*">
-          <Error />
-        </Route>
-      </Switch>
+      {coronaDataPerDay.confirmed ? (
+        <Switch>
+          <Route exact path="/">
+            <Home
+              all={all}
+              coronaData={coronaDataForCities}
+              coronaDataPerDay={coronaDataPerDay}
+            />
+          </Route>
+          <Route exact path="/list">
+            <List coronaData={coronaDataForCities} />
+          </Route>
+          <Route exact path="/map">
+            <Map coronaData={coronaDataForCities} />
+          </Route>
+          <Route path="*">
+            <Error />
+          </Route>
+        </Switch>
+      ) : (
+        <div className="app__loader">
+          <Loader />
+        </div>
+      )}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react"; 
+import React from "react";
 import { useState } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,12 +7,12 @@ import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import "./Map.styles.scss";
 import Loader from "../../components/Loader/Loader.component";
 
-
 const Map = ({ coronaData }) => {
-  const mapToken  = 'pk.eyJ1Ijoib3J6ZW4iLCJhIjoiY2tsNmtlNThxMXdmMjJvbzRuZmM5Z2xlMSJ9.evazqKiIpbm3w7p31rwMXw';
+  const mapToken =
+    "pk.eyJ1Ijoib3J6ZW4iLCJhIjoiY2tsNmtlNThxMXdmMjJvbzRuZmM5Z2xlMSJ9.evazqKiIpbm3w7p31rwMXw";
   const [viewport, setViewport] = useState({
-    width: '100vw',
-    height: '100vh',
+    width: "100vw",
+    height: "100vh",
     latitude: 48.383022,
     longitude: 31.1828699,
     zoom: 5.5,
@@ -23,8 +23,10 @@ const Map = ({ coronaData }) => {
   return (
     <>
       <ReactMapGL
-       mapStyle={'mapbox://styles/orzen/ckl6kx0wt5en117tflro7bng6'}
-        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN || mapToken}
+        mapStyle={"mapbox://styles/orzen/ckl6kx0wt5en117tflro7bng6"}
+        mapboxApiAccessToken={
+          process.env.REACT_APP_MAPBOX_ACCESS_TOKEN || mapToken
+        }
         {...viewport}
         onViewportChange={(nextViewport) => setViewport(nextViewport)}
       >
@@ -62,13 +64,19 @@ const Map = ({ coronaData }) => {
                   className="popup"
                 >
                   <div className="popup-info-container">
-                    <span className="city">{city.label.uk}</span>
-                    <span className="confirmed">
+                    <span className="pop-up__city">{city.label.uk}</span>
+                    <span className="pop-up__confirmed">
                       Підтверджено: {city.confirmed}
                     </span>
-                    <span className="recovered">Одужало: {city.recovered}</span>
-                    <span className="existing">Хворіє: {city.existing}</span>
-                    <span className="deaths">Померло: {city.deaths}</span>
+                    <span className="pop-up__recovered">
+                      Одужало: {city.recovered}
+                    </span>
+                    <span className="pop-up__existing">
+                      Хворіє: {city.existing}
+                    </span>
+                    <span className="pop-up__deaths">
+                      Померло: {city.deaths}
+                    </span>
                   </div>
                 </Popup>
               ) : null}

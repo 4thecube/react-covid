@@ -10,7 +10,7 @@ const Loader = () => {
       size="5x"
       spin
       style={{
-          width: 'inerhit',
+        width: "inerhit",
         color: "black",
         display: "flex",
         justifyContent: "center",

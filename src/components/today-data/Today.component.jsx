@@ -22,16 +22,16 @@ const Today = ({ coronaDataPerDay }) => {
     deaths[deaths.length - 1] - deaths[deaths.length - 2]
   );
   const forCurrentDate = new Date(dates[dates.length - 1]).toLocaleString(
-    "ua-UA",
+    "uk-UA",
     {
-      day: 'numeric',
+      day: "numeric",
       month: "long",
     }
   );
   console.log(forCurrentDate);
   return (
     <div className="today-container">
-      <div className="today-title">Дані на {forCurrentDate}</div>
+      <div className="today-title">Дані за {forCurrentDate}</div>
       <div className="today-block-container">
         <div className="today-block today-confirmed">
           <span className="today-block-counted">{confirmedCount}</span>

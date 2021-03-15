@@ -7,15 +7,15 @@
   }
 }
 
-.city{
-    color: black;
-    padding: 1rem;
+.city {
+  color: black;
+  padding: 1rem;
 }
 .popup {
   z-index: 13;
 }
 
-.mapboxgl-popup-content{
+.mapboxgl-popup-content {
   .mapboxgl-popup-close-button {
     color: red;
     font-size: 22px;
@@ -24,4 +24,25 @@
 .popup-info-container {
   display: flex;
   flex-direction: column;
+
+  font-weight: 600;
+  .pop-up__city {
+    font-size: 1.1rem;
+  }
+
+  .pop-up__confirmed {
+    color: #1f6feb;
+  }
+
+  .pop-up__recovered {
+    color: #3fb950;
+  }
+
+  .pop-up__existing {
+    color: #f0883e;
+  }
+
+  .pop-up__deaths {
+    color: #da3633;
+  }
 }

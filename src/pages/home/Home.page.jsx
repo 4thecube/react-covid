@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVirus, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 import List from "../../components/list/List.component";
 import ChartComponent from "../../components/chart/Chart.component";
@@ -11,18 +11,15 @@ import Loader from "../../components/Loader/Loader.component";
 import Today from "../../components/today-data/Today.component";
 
 import "./Home.styles.scss";
-import ParticlesContainer from "../../components/particles/Particles.component";
+import Intro from "../../components/intro/Intro.component";
+
 const Home = ({ coronaData, all, coronaDataPerDay }) => {
   const [isHidden, setIsHidden] = useState(true);
   console.log(isHidden);
   return (
     <div className="home-page">
-      <div className="home-page__title">
-        <ParticlesContainer />
-        <span className="home-page__title-text">COVID-19. Україна</span>
-      </div>
+      <Intro />
       <Today coronaDataPerDay={coronaDataPerDay} />
-
       <div className="home-page__data-container">
         <div className="buttons-container">
           <div

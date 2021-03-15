@@ -12,7 +12,6 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import mapboxgl from "mapbox-gl";
 import Error from "./pages/404/Error-404";
 import Loader from "./components/Loader/Loader.component";
-import List from "./pages/list/List.component";
 // eslint-disable-next-line import/no-webpack-loader-syntax
 mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 
@@ -79,9 +78,6 @@ function App() {
               coronaData={coronaDataForCities}
               coronaDataPerDay={coronaDataPerDay}
             />
-          </Route>
-          <Route exact path="/list">
-            <List coronaData={coronaDataForCities} />
           </Route>
           <Route exact path="/map">
             <Map coronaData={coronaDataForCities} />

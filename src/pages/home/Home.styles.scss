@@ -17,10 +17,11 @@
 
 .buttons-container {
   width: 100vw;
-  padding: 5rem;
+  height: 20vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   background-color: #eaf5f1;
   font-size: 1.3rem;
   margin-bottom: 40px;

@@ -1,0 +1,109 @@
+.today-container {
+  width: 100vw;
+  height: 100vh;
+  font-size: 2rem;
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .today-title {
+    width: 70%;
+    text-align: start;
+    font-size: 4rem;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+  }
+
+  .today-block-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .today-block {
+      width: 30vw;
+      height: 16vh;
+      margin: 1rem;
+      padding: 3rem;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      background-color: #eaf5f1;
+
+      .today-block-counted {
+        padding: 1rem;
+        font-size: 4rem;
+        font-weight: bolder;
+      }
+
+      .today-block-title {
+        padding: 0.3rem;
+        font-weight: lighter;
+      }
+    }
+
+    .today-deaths {
+      background-color: #ffe3e2;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .today-container {
+    height: auto;
+    .today-title {
+      margin-top: 50px;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      width: 90%;
+    }
+    .today-block-container {
+      .today-block {
+        width: 38vw;
+        height: 15vh;
+        display: flex;
+        justify-content: center;
+        margin: 0.2rem;
+        padding: 1rem;
+        .today-block-counted {
+          font-size: 1.9rem;
+          padding: 0.3rem;
+        }
+        .today-block-title {
+          font-size: 1.2rem;
+        }
+      }
+      .today-deaths {
+        width: 86vw;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 421px) and (max-width: 1200px) {
+  .today-container {
+    height: auto;
+    .today-title {
+      margin-top: 50px;
+      font-size: 7vw;
+    }
+    .today-block-container {
+      .today-block {
+        width: 45vw;
+
+        margin: 0.2rem;
+        padding: 1rem;
+        .today-block-counted {
+          font-size: 7vw;
+          padding: 0.3rem;
+        }
+        .today-block-title {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}

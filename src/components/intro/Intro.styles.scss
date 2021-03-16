@@ -29,3 +29,31 @@
     color: black;
   }
 }
+
+@media screen and (max-width: 420px) {
+  .intro {
+    height: 50vh;
+    font-size: 5rem;
+    .intro__covid-text {
+      font-size: 4.5rem;
+      top: 5vh;
+    }
+    .intro__ukraine-text {
+      top: 15vh;
+    }
+  }
+}
+
+@media screen and (min-width: 421px) and (max-width: 1200px) {
+  .intro {
+    height: 50vh;
+    .intro__covid-text {
+      font-size: 15vw;
+      top: 5vh;
+    }
+    .intro__ukraine-text {
+      font-size: 10vw;
+      top: 25vh;
+    }
+  }
+}

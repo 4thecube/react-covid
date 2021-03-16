@@ -1,0 +1,27 @@
+.summary-container {
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  .summary-box-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+@media screen and (min-width: 421px) and (max-width: 1200px) {
+  .summary-container{
+    width: 100vw;
+    height: 85vh;
+    .summary-box-container{
+      margin-top: -50px;
+    }
+  }
+}

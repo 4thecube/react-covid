@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
-import axios from "axios";
 
 import "./Chart.styles.scss";
 

@@ -32,3 +32,51 @@
     }
   }
 }
+
+@media screen and (max-width: 420px) {
+  .list-of-cities {
+    .city-card {
+      width: 90vw;
+      height: 25vh;
+      margin: 10px;
+      .region-title {
+        font-size: 1.8rem;
+        font-weight: 500;
+      }
+      .region-confirmed,
+      .region-recovered,
+      .region-existing,
+      .region-deaths {
+        margin-left: 10px;
+        font-size: 1.3rem;
+        font-weight: lighter;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 421px) and (max-width: 1200px) {
+  .list-of-cities {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .city-card {
+      width: 38vw;
+      height: 25vh;
+      margin: 10px;
+      .region-title {
+        font-size: 1.8rem;
+        font-weight: 500;
+      }
+      .region-confirmed,
+      .region-recovered,
+      .region-existing,
+      .region-deaths {
+        margin-left: 10px;
+        font-size: 1.3rem;
+        font-weight: lighter;
+      }
+    }
+  }
+}

@@ -6,45 +6,44 @@ import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 import List from "../../components/list/List.component";
 import ChartComponent from "../../components/chart/Chart.component";
-import CountedSummary from "../../components/counted-summary/CountedSummary.component";
+import SummaryContainer from "../../components/summary-container/SummaryContainer.component";
 import Loader from "../../components/Loader/Loader.component";
-import Today from "../../components/today-data/Today.component";
+import Daily from "../../components/today-data/Daily.component";
 
 import "./Home.styles.scss";
 import Intro from "../../components/intro/Intro.component";
 
 const Home = ({ coronaData, all, coronaDataPerDay }) => {
   const [isHidden, setIsHidden] = useState(true);
-  console.log(isHidden);
   return (
     <div className="home-page">
       <Intro />
-      <Today coronaDataPerDay={coronaDataPerDay} />
+      <Daily coronaDataPerDay={coronaDataPerDay} />
       <div className="home-page__data-container">
-        <div className="buttons-container">
-          <div
-            className="button-container"
-            onClick={() => setIsHidden(!isHidden)}
-          >
-            Переглянути по областях
-          </div>
-          <Link
-            to="/map"
-            target="_blank"
-            className="button-container second-button"
-          >
-            Переглянути на карті
-            <FontAwesomeIcon icon={faExternalLinkAlt} />
-          </Link>
-        </div>
         <div className="home-page__chart-and-summary-container">
           {all.confirmedAll === null && coronaDataPerDay === undefined ? (
             <Loader />
           ) : (
             <>
-              {isHidden ? null : <List coronaData={coronaData} />}
               <ChartComponent coronaDataForChart={coronaDataPerDay} />
-              <CountedSummary all={all} />
+              <div className="buttons-container">
+                <div
+                  className="button-container"
+                  onClick={() => setIsHidden(!isHidden)}
+                >
+                  Переглянути по областях
+                </div>
+                <Link
+                  to="/map"
+                  target="_blank"
+                  className="button-container second-button"
+                >
+                  Переглянути на карті
+                  <FontAwesomeIcon icon={faExternalLinkAlt} />
+                </Link>
+              </div>
+              {isHidden ? null : <List coronaData={coronaData} />}
+              <SummaryContainer all={all} />
             </>
           )}
         </div>

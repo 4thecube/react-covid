@@ -38,7 +38,7 @@ const ParticlesContainer = () => {
         },
         particles: {
           number: {
-            value: 28,
+            value: 15,
           },
           rotate: "true",
           move: {

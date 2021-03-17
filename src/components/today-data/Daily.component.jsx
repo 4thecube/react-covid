@@ -25,7 +25,7 @@ const Daily = ({ coronaDataPerDay }) => {
   );
   return (
     <div className="today-container">
-      <div className="today-title">Дані за {forCurrentDate}</div>
+      <div className="today-title">Дані на {forCurrentDate}</div>
       <div className="today-block-container">
         <div className="today-block today-confirmed">
           <span className="today-block-counted">{confirmedCount}</span>

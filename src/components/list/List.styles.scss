@@ -35,19 +35,20 @@
 
 @media screen and (max-width: 420px) {
   .list-of-cities {
+
     .city-card {
       width: 90vw;
-      height: 25vh;
+      height: 20vh;
       margin: 10px;
       .region-title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         font-weight: 500;
       }
       .region-confirmed,
       .region-recovered,
       .region-existing,
       .region-deaths {
-        margin-left: 10px;
+        margin-left: 5px;
         font-size: 1.3rem;
         font-weight: lighter;
       }

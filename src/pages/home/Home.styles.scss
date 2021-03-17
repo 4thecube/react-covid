@@ -11,40 +11,45 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100vw;
-  }
-}
-
-.buttons-container {
-  width: 100vw;
-  height: 20vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: #eaf5f1;
-  font-size: 1.3rem;
-  margin-bottom: 40px;
-  .button-container {
-    background-color: #0d1117;
-    color: white;
-    width: 18vw;
-    height: 10vh;
-
-    display: flex;
-    justify-content: space-evenly;
     align-items: center;
-    text-align: center;
-    cursor: pointer;
-    text-decoration: none;
-    border: 3px solid black;
-    &:hover {
-      color: black;
-      background-color: white;
+    width: 100vw;
+
+    .buttons-container {
+      width: 72vw;
+      height: 20vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background-color: #eaf5f1;
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+      .button-container {
+        background-color: #0d1117;
+        color: white;
+        width: 18vw;
+        height: 8vh;
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        text-decoration: none;
+        border: 3px solid black;
+        &:hover {
+          color: black;
+          background-color: white;
+        }
+      }
+      .second-button {
+        margin-left: 30px;
+      }
+      .open {
+        color: black;
+        background-color: white;
+      }
     }
-  }
-  .second-button {
-    margin-left: 30px;
   }
 }
 
@@ -55,17 +60,19 @@
     .home-page__chart-and-summary-container {
       flex-direction: column;
       align-items: center;
-    }
-    .buttons-container {
-      width: 100vw;
-      margin: 30px 0;
-      font-size: 1rem;
-      justify-content: space-between;
-      .button-container {
-        width: 40vw;
-      }
-      .second-button {
-        margin-left: 0px;
+
+      .buttons-container {
+        width: 100vw;
+        margin: 30px 0;
+        font-size: 1rem;
+        justify-content: space-around;
+        .button-container {
+          width: 35vw;
+          height: 5vh;
+        }
+        .second-button {
+          margin-left: 0px;
+        }
       }
     }
   }
@@ -83,17 +90,20 @@
       margin-top: 10px;
     }
     .buttons-container {
-      width: 100vw;
+      width: 95vw;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
       .button-container {
-        margin: 15px 0 0 15px;
+        margin-top: 10px;
         width: 35vw;
         height: 5vh;
         padding: 1em;
+      }
+      .second-button {
+        margin-left: 10px;
       }
     }
   }
@@ -109,18 +119,18 @@
     }
     .home-page__chart-and-summary-container {
       margin-top: 10px;
-    }
-    .buttons-container {
-      height: 25vh;
-      margin: 0;
-      padding: 0;
-      width: 100vw;
-      justify-content: space-evenly;
-      align-items: center;
-      .button-container {
-        width: 30vw;
-        height: 5vh;
-        padding: 1em;
+      .buttons-container {
+        height: 25vh;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        justify-content: space-evenly;
+        align-items: center;
+        .button-container {
+          width: 30vw;
+          height: 5vh;
+          padding: 1em;
+        }
       }
     }
   }

@@ -46,7 +46,13 @@
     }
 
     .today-deaths {
-      background-color: #ffe3e2;
+      background-color: rgba(#de3618, 0.2);
+    }
+    .today-confirmed {
+      background-color: rgba(#1096de, 0.2);
+    }
+    .today-recovered {
+      background-color: rgba(#10a11a, 0.2);
     }
   }
 }

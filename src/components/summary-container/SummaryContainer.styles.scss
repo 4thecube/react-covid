@@ -1,11 +1,11 @@
 .summary-container {
   width: 100vw;
-  height: 70vh;
+  height: 65vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   .summary-box-container {
     display: flex;
     flex-direction: row;
@@ -15,12 +15,16 @@
   }
 }
 
-
+@media screen and (max-width: 420px) {
+  .summary-container{
+    height: 50vh;
+  }
+}
 
 @media screen and (min-width: 421px) and (max-width: 1200px) {
   .summary-container{
     width: 100vw;
-    height: 85vh;
+    height: 55vh;
     .summary-box-container{
       margin-top: -50px;
     }

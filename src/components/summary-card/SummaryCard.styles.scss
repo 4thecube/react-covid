@@ -19,12 +19,23 @@
     font-weight: lighter;
   }
 }
+.summary-confirmed {
+  background-color: rgba(#1096DE, 0.2);
+}
+.summary-recovered {
+  background-color: rgba(#10A11A, 0.2);
+}
+.summary-existing {
+  background-color: rgba(#ff7700, 0.2);
+}
 .summary-deaths {
-  background-color: #ffe3e2;
+  background-color: rgba(#DE3618, 0.2);
 }
 
 @media screen and (max-width: 420px) {
   .summary-box{
+    width: 28vw;
+    height: 14vh;
     padding: 2rem;
     margin: 5px;
     font-size: 1.3rem;

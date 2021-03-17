@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faExternalLinkAlt,
+  faLevelDownAlt,
+  faLevelUpAlt,
+} from "@fortawesome/free-solid-svg-icons";
 
 import List from "../../components/list/List.component";
 import ChartComponent from "../../components/chart/Chart.component";
@@ -26,12 +30,19 @@ const Home = ({ coronaData, all, coronaDataPerDay }) => {
           ) : (
             <>
               <ChartComponent coronaDataForChart={coronaDataPerDay} />
+
+              <SummaryContainer all={all} />
               <div className="buttons-container">
                 <div
-                  className="button-container"
+                  className={`${isHidden ? 'hidden' : 'open'} button-container`}
                   onClick={() => setIsHidden(!isHidden)}
                 >
                   Переглянути по областях
+                  {isHidden ? (
+                    <FontAwesomeIcon icon={faLevelDownAlt} />
+                  ) : (
+                    <FontAwesomeIcon icon={faLevelUpAlt} />
+                  )}
                 </div>
                 <Link
                   to="/map"
@@ -43,7 +54,6 @@ const Home = ({ coronaData, all, coronaDataPerDay }) => {
                 </Link>
               </div>
               {isHidden ? null : <List coronaData={coronaData} />}
-              <SummaryContainer all={all} />
             </>
           )}
         </div>

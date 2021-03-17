@@ -9,9 +9,21 @@ const SummaryContainer = (props) => {
   return (
     <div className="summary-container">
       <div className="summary-box-container">
-        <SummaryCard description="Підтверджено" count={all.confirmedAll} />
-        <SummaryCard description="Одужало" count={all.recoveredAll} />
-        <SummaryCard description="Хворіє" count={all.existingAll} />
+        <SummaryCard
+          propsClass="summary-confirmed"
+          description="Підтверджено"
+          count={all.confirmedAll}
+        />
+        <SummaryCard
+          propsClass="summary-recovered"
+          description="Одужало"
+          count={all.recoveredAll}
+        />
+        <SummaryCard
+          propsClass="summary-existing"
+          description="Хворіє"
+          count={all.existingAll}
+        />
         <SummaryCard
           propsClass="summary-deaths"
           description="Померло"
@@ -21,6 +33,5 @@ const SummaryContainer = (props) => {
     </div>
   );
 };
-
 
 export default SummaryContainer;

@@ -10,10 +10,6 @@ const ParticlesContainer = () => {
         interactivity: {
           detectsOn: "canvas",
           events: {
-            onClick: {
-              enable: true,
-              mode: "push",
-            },
             onHover: {
               enable: true,
               mode: "repulse",
@@ -27,9 +23,6 @@ const ParticlesContainer = () => {
               opacity: 0.8,
               size: 40,
             },
-            push: {
-              quantity: 4,
-            },
             repulse: {
               distance: 200,
               duration: 0.4,
@@ -38,7 +31,7 @@ const ParticlesContainer = () => {
         },
         particles: {
           number: {
-            value: 15,
+            value: 18,
           },
           rotate: "true",
           move: {

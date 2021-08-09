@@ -14,41 +14,24 @@
     align-items: center;
     width: 100vw;
 
+    .map-on-main {
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     .buttons-container {
       width: 72vw;
       height: 20vh;
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-evenly;
       align-items: center;
       background-color: #eaf5f1;
       font-size: 1.3rem;
       margin-bottom: 40px;
-      .button-container {
-        background-color: #0d1117;
-        color: white;
-        width: 18vw;
-        height: 8vh;
 
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        text-align: center;
-        cursor: pointer;
-        text-decoration: none;
-        border: 3px solid black;
-        &:hover {
-          color: black;
-          background-color: white;
-        }
-      }
-      .second-button {
-        margin-left: 30px;
-      }
-      .open {
-        color: black;
-        background-color: white;
-      }
     }
   }
 }

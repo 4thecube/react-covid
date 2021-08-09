@@ -47,6 +47,8 @@
 
     .today-deaths {
       background-color: rgba(#de3618, 0.2);
+      width: calc(60vw + 8rem);
+      text-align: center;
     }
     .today-confirmed {
       background-color: rgba(#1096de, 0.2);

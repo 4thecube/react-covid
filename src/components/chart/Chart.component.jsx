@@ -14,6 +14,9 @@ class ChartComponent extends Component {
         },
         xaxis: {
           categories: ["2012"],
+          labels: {
+            show: false,
+          },
         },
         colors: ["#1096DE", "#10A11A", "#ff7700", "#DE3618"],
       },

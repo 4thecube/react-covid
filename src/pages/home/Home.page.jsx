@@ -13,12 +13,24 @@ import ChartComponent from "../../components/chart/Chart.component";
 import SummaryContainer from "../../components/summary-container/SummaryContainer.component";
 import Loader from "../../components/Loader/Loader.component";
 import Daily from "../../components/today-data/Daily.component";
+import Map from '../map/Map.page'
+import Button from '../../components/button/Button.component'
 
 import "./Home.styles.scss";
 import Intro from "../../components/intro/Intro.component";
 
 const Home = ({ coronaData, all, coronaDataPerDay }) => {
   const [isHidden, setIsHidden] = useState(true);
+  const [isMapHidden, setIsMapHidden] = useState(true);
+
+  const handleIsMapHidden = () => {
+    setIsMapHidden(!isMapHidden)
+  }
+
+  const handleIsHidden = () => {
+    setIsHidden(!isHidden)
+  }
+
   return (
     <div className="home-page">
       <Intro />
@@ -30,29 +42,14 @@ const Home = ({ coronaData, all, coronaDataPerDay }) => {
           ) : (
             <>
               <ChartComponent coronaDataForChart={coronaDataPerDay} />
-
               <SummaryContainer all={all} />
               <div className="buttons-container">
-                <div
-                  className={`${isHidden ? 'hidden' : 'open'} button-container`}
-                  onClick={() => setIsHidden(!isHidden)}
-                >
-                  Переглянути по областях
-                  {isHidden ? (
-                    <FontAwesomeIcon icon={faLevelDownAlt} />
-                  ) : (
-                    <FontAwesomeIcon icon={faLevelUpAlt} />
-                  )}
-                </div>
-                <Link
-                  to="/map"
-                  target="_blank"
-                  className="button-container second-button"
-                >
-                  Переглянути на карті
-                  <FontAwesomeIcon icon={faExternalLinkAlt} />
-                </Link>
+                <Button title={'Переглянути на карті'} handleIsHiddenlick={handleIsMapHidden} isHidden= {isMapHidden} />
+                <Button title={'Переглянути по областях'} handleIsHiddenlick={handleIsHidden} isHidden= {isHidden} />
               </div>
+              {
+                isMapHidden ? null : <div className="map-on-main"><Map coronaData={coronaData} /></div>
+              }
               {isHidden ? null : <List coronaData={coronaData} />}
             </>
           )}
